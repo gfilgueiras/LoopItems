@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Role;
 use App\Models\Status;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,6 +16,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Status::class);
+            $table->foreignIdFor(Role::class);
             $table->string('firstName');
             $table->string('surename');
             $table->string('email')->unique();
