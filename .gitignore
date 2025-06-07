@@ -1,0 +1,43 @@
+# ----------------------------------------------------------------------------------
+# GITIGNORE
+# ----------------------------------------------------------------------------------
+# -- Folders
+/public/hot
+/public/build
+/public/storage
+
+/myFolder/*
+
+/storage/*.key
+/storage/debugbar/
+
+/node_modules
+/docker/frontend/node/app/node_modules/
+
+/docker/db/mysql/data/
+/docker/cache/redis/data/
+
+/.zed
+/.fleet
+/.vscode
+
+/vendor
+/.phpunit.cache
+
+
+# -- Files
+.env
+.env.backup
+.env.production
+
+!/myFolder/.gitkeep
+
+auth.json
+.phpactor.json
+.phpunit.result.cache
+
+Homestead.json
+Homestead.yaml
+
+npm-debug.log
+yarn-error.log
