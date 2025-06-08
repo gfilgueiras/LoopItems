@@ -13,7 +13,7 @@ class Log extends Model
         'dataAfter',
         'message',
         'comment',
-        'severity'
+        'severity',
     ];
 
     public function user(): BelongsTo

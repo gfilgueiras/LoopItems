@@ -11,7 +11,7 @@ class Proposal extends Model
         'userId',
         'productId',
         'productSwapId',
-        'statusId'
+        'statusId',
     ];
 
     public function user(): BelongsTo

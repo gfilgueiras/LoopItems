@@ -14,7 +14,7 @@ class Product extends Model
         'conditionId',
         'statusId',
         'title',
-        'description'
+        'description',
     ];
 
     public function user(): BelongsTo

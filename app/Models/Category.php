@@ -9,7 +9,7 @@ class Category extends Model
 {
     protected $fillable = [
         'title',
-        'status_id'
+        'statusId',
     ];
 
     public function status(): BelongsTo

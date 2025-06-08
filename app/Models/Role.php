@@ -9,7 +9,7 @@ class Role extends Model
 {
     protected $fillable = [
         'statusId',
-        'title'
+        'title',
     ];
 
     public function status(): BelongsTo
