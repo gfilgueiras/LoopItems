@@ -32,7 +32,7 @@ class Product extends Model
         return $this->belongsTo(Condition::class);
     }
 
-    public function photo(): MorphMany
+    public function photos(): MorphMany
     {
         return $this->morphMany(Photo::class, 'shootable');
     }

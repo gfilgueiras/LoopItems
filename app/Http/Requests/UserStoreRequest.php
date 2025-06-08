@@ -20,7 +20,7 @@ class UserStoreRequest extends FormRequest
             'surename' => ['require', 'string'],
             'email' => ['require', 'string', 'email'],
             'emailVerifiedAt' => ['nullable', 'timestamp'],
-            'phoneNumber' => ['nullable', 'string'],
+            'phoneNumber' => ['nullable', 'integer'],
         ];
     }
 
