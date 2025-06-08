@@ -18,9 +18,9 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class, 'userId');
-            $table->foreignIdFor(Category::class, 'categoryID');
+            $table->foreignIdFor(Category::class, 'categoryId');
             $table->foreignIdFor(Condition::class, 'conditionId');
-            $table->foreignIdFor(Status::class, 'statusID');
+            $table->foreignIdFor(Status::class, 'statusId');
             $table->string('title');
             $table->string('description');
             $table->timestamps();
