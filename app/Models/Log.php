@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Log extends Model
 {
     protected $fillable = [
-        'user_id',
+        'userId',
         'dataBefore',
         'dataAfter',
         'message',

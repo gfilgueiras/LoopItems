@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Proposal extends Model
 {
     protected $fillable = [
-        'user_id',
-        'product_id',
-        'productSwap_id',
-        'status_id'
+        'userId',
+        'productId',
+        'productSwapId',
+        'statusId'
     ];
 
     public function user(): BelongsTo

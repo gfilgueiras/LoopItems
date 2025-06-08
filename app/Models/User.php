@@ -19,18 +19,18 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'status_id',
-        'role_id',
+        'statusId',
+        'roleId',
         'firstName',
         'surename',
         'email',
-        'email_verified_at',
+        'emailVerifiedAt',
         'phoneNumber',
     ];
 
     protected $hidden = [
         'password',
-        'remember_token',
+        'rememberToken',
     ];
 
     public function status(): BelongsTo

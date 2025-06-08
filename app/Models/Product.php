@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 class Product extends Model
 {
     protected $fillable = [
-        'user_id',
-        'category_id',
-        'condition_id',
-        'status_id',
+        'userId',
+        'categoryId',
+        'conditionId',
+        'statusId',
         'title',
         'description'
     ];

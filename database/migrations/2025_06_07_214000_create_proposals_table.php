@@ -17,8 +17,8 @@ return new class extends Migration
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class);
-            $table->foreignId('product_id')->constrained('products');
-            $table->foreignId('productSwap_id')->constrained('products');
+            $table->foreignId('productId')->constrained('products');
+            $table->foreignId('productSwapId')->constrained('products');
             $table->foreignIdFor(Status::class);
             $table->timestamps();
         });
