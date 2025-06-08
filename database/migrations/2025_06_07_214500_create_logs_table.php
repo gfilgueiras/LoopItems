@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class, 'userId');
             $table->json('dataBefore')->nullable();
             $table->json('dataAfter')->nullable();
             $table->string('message');

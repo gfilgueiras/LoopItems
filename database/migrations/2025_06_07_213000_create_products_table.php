@@ -17,10 +17,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Category::class);
-            $table->foreignIdFor(Condition::class);
-            $table->foreignIdFor(Status::class);
+            $table->foreignIdFor(User::class, 'userId');
+            $table->foreignIdFor(Category::class, 'categoryID');
+            $table->foreignIdFor(Condition::class, 'conditionId');
+            $table->foreignIdFor(Status::class, 'statusID');
             $table->string('title');
             $table->string('description');
             $table->timestamps();

@@ -16,10 +16,10 @@ return new class extends Migration
     {
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class, 'userId');
             $table->foreignId('productId')->constrained('products');
             $table->foreignId('productSwapId')->constrained('products');
-            $table->foreignIdFor(Status::class);
+            $table->foreignIdFor(Status::class, 'statusId');
             $table->timestamps();
         });
     }

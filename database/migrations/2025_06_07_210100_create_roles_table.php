@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->foreignIdFor(Status::class);
+            $table->foreignIdFor(Status::class, 'statusID');
             $table->string('title');
             $table->timestamps();
         });
