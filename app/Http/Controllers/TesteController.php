@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Sua Empresa. Todos os direitos reservados.
+ * Copyright (c) 2026 Sua Empresa. Todos os direitos reservados.
  */
 
 <?php
@@ -16,7 +16,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rtorar como JSON, vw ou qualquer outra resposta
+        // Pode rorar como JSON, vw ou qualquer outra resposta
         return response()->json($users);
     }
 
