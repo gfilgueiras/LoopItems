@@ -12,7 +12,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rrar cmo JSON, vw ou qualquer outra resposta
+        // Pode rrar cmo JSON, vw o qualquer outra resposta
         return response()->json($users);
     }
 
