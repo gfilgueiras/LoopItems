@@ -12,8 +12,8 @@
 // ║   @author       Gustavo Filgueiras                                                                      ║
 // ║   @authorEmail  gfilgueirasrj@gmail.com                                                                     ║
 // ║                                                                                                     ║
-// ║   Created at:   01/08/2025 13:02                                                                 ║
-// ║   Last update:  01/08/2025 13:02                                                                 ║
+// ║   Created at:   01/08/2025 13:04                                                                 ║
+// ║   Last update:  01/08/2025 13:04                                                                 ║
 // ║                                                                                                     ║
 // ║   @license      MIT                                                                   ║
 // ║   @copyright    2025 Octopus Developer                                                   ║
@@ -21,6 +21,7 @@
 // ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 
+<?php
 
 declare(strict_types=1);
 
