@@ -11,7 +11,7 @@
 // ║                                                                                                     ║
 // ║   Created at:   01/08/2025 13:19                                                                 ║
 // ║   Last update:  01/08/2025 13:19                                                                 ║
-// ║   Project:      01/08/2025 13:19                                                                 ║
+// ║   Project:      Sou Nail Desing                                                                 ║
 // ║                                                                                                     ║
 // ║   @author       Gustavo Filgueiras                                                                      ║
 // ║   @authorEmail  gfilgueirasrj@gmail.com                                                                     ║
