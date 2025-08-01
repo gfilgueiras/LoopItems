@@ -1,7 +1,7 @@
-
 /**
  * Copyright (c) 2025 Sua Empresa. Todos os direitos reservados.
  */
+
 <?php
 
 declare(strict_types=1);
