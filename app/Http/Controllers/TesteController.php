@@ -16,7 +16,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rorar como JSON, vw ou qualquer outra resposta
+        // Pode rrar como JSON, vw ou qualquer outra resposta
         return response()->json($users);
     }
 
