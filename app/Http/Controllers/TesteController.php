@@ -12,9 +12,9 @@
 // ║                           |_|                                                 |_|                   ║
 // ║                                                                                                     ║
 // ║   @author     Octopus Developer                                                                     ║
-// ║   @copyright  2025 Octopus Developer                                                     ║
-// ║   @license    MIT                                                                                    ║
-// ║   Last update: 01/08/2025 12:48                                                                  ║
+// ║   @copyright  2025 Octopus Developer                                                                ║
+// ║   @license    MIT                                                                                   ║
+// ║   Last update: 01/08/2025 12:49                                                                     ║
 // ║ ◎                                                                                                 ◎ ║
 // ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
@@ -31,7 +31,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rrar cmo JSON, vw qualquer outra respost
+        // Pode rrar cmo JSON, vw qualquer outra respos
         return response()->json($users);
     }
 
