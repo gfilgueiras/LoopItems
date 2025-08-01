@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2025 Sua Empresa. Todos os direitos reservados.
- * Last update: 01/08/2025 11:46
+ * Last update: 01/08/2025 12:30
  */
 
 <?php
@@ -17,7 +17,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rrar cmo JSON, vw  qualquer outra resposta
+        // Pode rrar cmo JSON, vw qualquer outra resposta
         return response()->json($users);
     }
 
