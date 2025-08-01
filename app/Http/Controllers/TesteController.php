@@ -11,10 +11,11 @@
 // ║    \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|       ║
 // ║                           |_|                                                 |_|                   ║
 // ║                                                                                                     ║
-// ║   @author     Octopus Developer                                                                     ║
-// ║   @copyright  2025 Octopus Developer                                                                ║
-// ║   @license    MIT                                                                                   ║
-// ║   Last update: 01/08/2025 12:49                                                                     ║
+// ║   @author       Gustavo Filgueiras                                                                      ║
+// ║   @authorEmail  gfilgueirasrj@gmail.com                                                                     ║
+// ║   @copyright    2025 Octopus Developer                                                   ║
+// ║   @license      MIT                                                                   ║
+// ║   Last update:  01/08/2025 12:52                                                                 ║
 // ║ ◎                                                                                                 ◎ ║
 // ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
