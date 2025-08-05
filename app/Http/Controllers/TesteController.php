@@ -8,14 +8,14 @@
 /* ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║ */
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
-/* /* ║   Last update: 05/08/2025 01:06:44                                                                  ║ */ */
-/* /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */ */
-/* /* ║   Project:     Sou Nail Desing                                                                      ║ */ */
+/* ║   Last update: 05/08/2025 01:09:51                                                                  ║ */
+/* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
+/* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ║                                                                                                     ║ */
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Created at:  05/08/2025 01:05:43                                                                  ║ */
-/* /* ║   License:     MIT                                                                                  ║ */ */
-/* /* ║   Copyright:   2025 Octopus Developer                                                               ║ */ */
+/* ║   License:     MIT                                                                                  ║ */
+/* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
 declare(strict_types=1);
 
@@ -29,7 +29,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rrar cmo JSON,vw q
+        // Pode rrar cmo JSON,vw
         return response()->json($users);
     }
 
