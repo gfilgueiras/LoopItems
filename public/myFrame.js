@@ -7,7 +7,7 @@
 /* ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║ */
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 05/08/2025 20:36:40                                                                  ║ */
+/* ║   Last update: 05/08/2025 20:37:41                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ║                                                                                                     ║ */
@@ -20,7 +20,7 @@
 // ************************************************************************
 // Variables
 // ***********************************************************************/
-// Pho
+// Ph
 var phoneNumberData = [
 	{countryName: 'Australia', countryNickname: 'Aus', countryFlag: 'comming soon', countryPhoneDDI: '+61', countryPhoneRealLenght: '10', countryPhoneMinLenght: '12', countryPhoneMaxLenght: '12', countryPhoneMask: "9999-999-999"},
 	{countryName: 'Brazil', countryNickname: 'Bra', countryFlag: 'comming soon', countryPhoneDDI: '+55', countryPhoneRealLenght: '11', countryPhoneMinLenght: '15', countryPhoneMaxLenght: '15', countryPhoneMask: "(99) 99999-9999"}
