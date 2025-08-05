@@ -9,14 +9,15 @@
 // ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║
 // ║                             |_|                                                 |_|                 ║
 // ║                                                                                                     ║
-// ║   Last update: 05/08/2025 00:37:23                                                                  ║
+// ║   Last update: 05/08/2025 00:37:59                                                                  ║
 // ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 // ║   Project: Sou Nail Desing                                                                          ║
 // ║                                                                                                     ║
 // ║   Author: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                              ║
-// ║   Created at: 05/08/2025 00:37:23                                                                   ║
+// ║   Created at: 05/08/2025 00:37:59                                                                   ║
 // ║   License MIT                                                                                       ║
 // ║   Copyright 2025 Octopus Developer                                                                  ║
+// ║                                                                                                     ║
 // ║   ◎                                                                                               ║
 // ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
