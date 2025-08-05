@@ -10,7 +10,7 @@
 // ║                           |_|                                                 |_|                   ║
 // ║                                                                                                     ║
 // ║   Created at:   05/08/2025 00:12:18                                                                 ║
-// ║   Last update:  05/08/2025 00:17:12
+// ║   Last update:  05/08/2025 00:19:56
 // ║   User update:  Gustavo Filgueiras
 // ║   Project:      Sou Nail Desing                                                                 ║
 // ║                                                                                                     ║
@@ -33,7 +33,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rrar cmo JSON,vw qualquer outra re
+        // Pode rrar cmo JSON,vw qualquer outra r
         return response()->json($users);
     }
 
