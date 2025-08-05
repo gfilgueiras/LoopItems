@@ -8,14 +8,14 @@
 // ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║
 // ║                             |_|                                                 |_|                 ║
 // ║                                                                                                     ║
-// ║   Last update: 05/08/2025 00:54:28                                                                  ║
+// ║   Last update: 05/08/2025 00:55:06                                                                  ║
 // ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
-// ║   Project:     Sou Nail DesingDDDDDDDDDDD                                                           ║
+// ║   Project:     Sou Nail Desing                                                                      ║
 // ║                                                                                                     ║
 // ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 // ║   Created at:  05/08/2025 00:53:44                                                                  ║
-// ║   License:     MITBALBLALBAL                                                                        ║
-// ║   Copyright:   2025 Octopus DeveloperXXXXXXX                                                        ║
+// ║   License:     MIT                                                                                  ║
+// ║   Copyright:   2025 Octopus Developer                                                               ║
 // ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 declare(strict_types=1);
@@ -30,7 +30,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rrar cmo JSON,vw qua
+        // Pode rrar cmo JSON,vw qu
         return response()->json($users);
     }
 
