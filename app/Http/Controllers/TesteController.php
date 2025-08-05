@@ -9,8 +9,9 @@
 // ║    \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|       ║
 // ║                           |_|                                                 |_|                   ║
 // ║                                                                                                     ║
-// ║   Created at:   05/08/2025 00:00:1754362840                                                                 ║
-// ║   Last update:  05/08/2025 00:00:1754362840                                                                 ║
+// ║   Created at:   05/08/2025 00:01:57                                                                 ║
+// ║   Last update:  05/08/2025 00:01:57                                                                 ║
+// ║   User update:  Gustavo Filgueiras                                                                 ║
 // ║   Project:      Sou Nail Desing                                                                 ║
 // ║                                                                                                     ║
 // ║   Author       Gustavo Filgueiras                                                                       ║
