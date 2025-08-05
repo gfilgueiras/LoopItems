@@ -9,13 +9,12 @@
 // ║    \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|       ║
 // ║                           |_|                                                 |_|                   ║
 // ║                                                                                                     ║
-// ║   Created at:   05/08/2025 00:12:18                                                                 ║
-// ║   Last update:  05/08/2025 00:21:27
-// ║   User update:  Gustavo Filgueiras <gfilgueirasrj@gmail.com>
+// ║   Created at:   05/08/2025 00:25:44                                                                 ║
+// ║   Last update:  05/08/2025 00:25:44                                                                 ║
+// ║   User update:  Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                                                 ║
 // ║   Project:      Sou Nail Desing                                                                 ║
 // ║                                                                                                     ║
-// ║   Author       Gustavo Filgueiras                                                                       ║
-// ║   AuthorEmail  gfilgueirasrj@gmail.com                                                                      ║
+// ║   Author       Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                                                       ║
 // ║   License      MIT                                                                    ║
 // ║   Copyright    2025 Octopus Developer                                                    ║
 // ║ ◎                                                                                                 ◎ ║
@@ -33,7 +32,7 @@ class TesteController extends Controller
     {
         $users = User::all();
 
-        // Pode rrar cmo JSON,vw qualquer outr
+        // Pode rrar cmo JSON,vw qualquer out
         return response()->json($users);
     }
 
