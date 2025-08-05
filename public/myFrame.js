@@ -7,20 +7,20 @@
 /* ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║ */
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 05/08/2025 01:05:43                                                                  ║ */
-/* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Project:     Sou Nail Desing                                                                      ║ */
+/*/* ║   Last update: 05/08/2025 01:06:06                                                                  ║ */ */
+/*/* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */ */
+/*/* ║   Project:     Sou Nail Desing                                                                      ║ */ */
 /* ║                                                                                                     ║ */
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Created at:  05/08/2025 01:05:43                                                                  ║ */
-/* ║   License:     MIT                                                                                  ║ */
-/* ║   Copyright:   2025 Octopus Developer                                                               ║ */
+/*/* ║   License:     MIT                                                                                  ║ */ */
+/*/* ║   Copyright:   2025 Octopus Developer                                                               ║ */ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
 
 // ************************************************************************
 // Variables
 // ***********************************************************************/
-// Phone dat
+// Phone da
 var phoneNumberData = [
 	{countryName: 'Australia', countryNickname: 'Aus', countryFlag: 'comming soon', countryPhoneDDI: '+61', countryPhoneRealLenght: '10', countryPhoneMinLenght: '12', countryPhoneMaxLenght: '12', countryPhoneMask: "9999-999-999"},
 	{countryName: 'Brazil', countryNickname: 'Bra', countryFlag: 'comming soon', countryPhoneDDI: '+55', countryPhoneRealLenght: '11', countryPhoneMinLenght: '15', countryPhoneMaxLenght: '15', countryPhoneMask: "(99) 99999-9999"}
