@@ -8,16 +8,15 @@
 /* ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║ */
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 07/08/2025 22:50:41                                                                  ║ */
+/* ║   Last update: 07/08/2025 22:51:31                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ║                                                                                                     ║ */
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Created at:  07/08/2025 22:50:41                                                                  ║ */
+/* ║   Created at:  07/08/2025 22:51:31                                                                  ║ */
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
-
 
 declare(strict_types=1);
 
