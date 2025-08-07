@@ -1,5 +1,4 @@
 <?php
-
 /* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
 /* ║       _____                                      _____                   _                          ║ */
 /* ║      / ___ \       _                            (____ \                 | |                         ║ */
@@ -14,29 +13,24 @@
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ║                                                                                                     ║ */
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Created at:  05/08/2025 21:22:00                                                                  ║ */
+/* ║   Created at:  07/08/2025 22:47:14                                                                  ║ */
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
+
 
 declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Foundation\Http\FormRequest;
 
-class TesteController extends Controller
+class TesteSemNamespace
 {
-    public function gotta()
+    public function abbb()
     {
-        $users = User::all();
-
-        // Pode rrar cm
-        return response()->json($users);
-    }
-
-    public function one()
-    {
-        return $this->gotta();
+        $a = new FormRequest();
+        $b = new User();
     }
 }

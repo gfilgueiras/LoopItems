@@ -21,29 +21,66 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Requests;
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
 
-use Illuminate\Foundation\Http\FormRequest;
+$finder = Finder::create()
+    ->in(__DIR__ . '/app')
+    ->name('*.php')
+    ->notName('*.blade.php')
+    ->ignoreDotFiles(true)
+    ->ignoreVCS(true);
 
-class CategoryStoreRequest extends FormRequest
-{
-    public function authorize(): bool
-    {
-        return true;
-    }
+$config = new Config();
 
-    public function rules(): array
-    {
-        return [
-            'title' => ['require', 'string'],
-        ];
-    }
-
-    public function messages(): array
-    {
-        return [
-            'title.require' => 'Please add a title — we can’t save this without one.',
-            'title.string'  => 'That title doesn’t look right. Try using words or a short sentence.',
-        ];
-    }
-}
+return $config
+    ->setRiskyAllowed(true)
+    ->setFinder($finder)
+    ->setRules([
+        '@PSR12'                          => true,
+        'strict_param'                    => true,
+        'array_syntax'                    => ['syntax' => 'short'],
+        'binary_operator_spaces'          => ['default' => 'align_single_space_minimal'],
+        'cast_spaces'                     => ['space' => 'single'],
+        'concat_space'                    => ['spacing' => 'one'],
+        'no_leading_namespace_whitespace' => true,
+        'blank_lines_before_namespace'    => true,
+        'blank_line_after_namespace'      => true,
+        'declare_strict_types'            => true,
+        'phpdoc_align'                    => ['align' => 'vertical'],
+        'phpdoc_order'                    => true,
+        'phpdoc_separation'               => true,
+        'phpdoc_summary'                  => false,
+        'return_type_declaration'         => ['space_before' => 'none'],
+        'single_quote'                    => true,
+        'trailing_comma_in_multiline'     => ['elements' => ['arrays']],
+        'no_unused_imports'               => true,
+        'psr_autoloading'                 => true,
+        'ordered_imports'                 => [
+            'sort_algorithm' => 'alpha',
+            'imports_order'  => ['class', 'function', 'const'],
+        ],
+        // 'class_attributes_separation' => [
+        //     'elements' => ['method' => 'one', 'property' => 'one', 'const' => 'one'],
+        // ],
+        'method_argument_space' => [
+            'on_multiline'                     => 'ensure_fully_multiline',
+            'keep_multiple_spaces_after_comma' => false,
+        ],
+        'no_extra_blank_lines' => [
+            'tokens' => [
+                'extra',
+                'use',
+                'throw',
+                'return',
+                'continue',
+                'break',
+                'curly_brace_block',
+                'parenthesis_brace_block',
+                'square_brace_block',
+                'switch',
+                'case',
+                'default',
+            ],
+        ],
+    ]);
