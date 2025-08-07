@@ -1,4 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Foundation\Http\FormRequest;
+
 /* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
 /* ║       _____                                      _____                   _                          ║ */
 /* ║      / ___ \       _                            (____ \                 | |                         ║ */
@@ -18,16 +26,9 @@
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
 
-declare(strict_types=1);
-
-namespace App\Http\Controllers;
-
-use App\Models\User;
-use Illuminate\Foundation\Http\FormRequest;
-
 class TesteSemNamespace
 {
-    public function abbb()
+    public function abb()
     {
         $a = new FormRequest();
         $b = new User();
