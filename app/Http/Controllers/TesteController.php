@@ -1,5 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+
 /* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
 /* ║       _____                                      _____                   _                          ║ */
 /* ║      / ___ \       _                            (____ \                 | |                         ║ */
@@ -18,12 +24,6 @@
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
-
-declare(strict_types=1);
-
-namespace App\Http\Controllers;
-
-use App\Models\User;
 
 class TesteController extends Controller
 {
