@@ -1,12 +1,5 @@
 <?php
-
-declare(strict_types=1);
-
-namespace App\Http\Controllers;
-
-use App\Models\User;
-
-/* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+/* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗ */
 /* ║       _____                                      _____                   _                          ║ */
 /* ║      / ___ \       _                            (____ \                 | |                         ║ */
 /* ║     | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____  ║ */
@@ -15,7 +8,7 @@ use App\Models\User;
 /* ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║ */
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 07/08/2025 22:47:14                                                                  ║ */
+/* ║   Last update: 08/08/2025 00:45:08                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ║                                                                                                     ║ */
@@ -25,13 +18,17 @@ use App\Models\User;
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
 
-class TesteController extends Controller
+declare(strict_types=1);
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+
+class TesteController
 {
     public function gotta()
     {
         $users = User::all();
-
-        // Pode rrar cm
         return response()->json($users);
     }
 
