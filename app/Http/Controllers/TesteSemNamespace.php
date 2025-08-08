@@ -13,7 +13,7 @@
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 08/08/2025 12:55:07                                                                  ║ */
+/* ║   Last update: 08/08/2025 12:55:35                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
@@ -27,7 +27,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class TesteSemNamespace
 {
-    public function abb()
+    public function abbb()
     {
         $a = new FormRequest();
         $b = new User();
