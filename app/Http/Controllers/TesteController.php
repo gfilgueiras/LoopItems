@@ -13,7 +13,7 @@
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 08/08/2025 00:46:36                                                                  ║ */
+/* ║   Last update: 08/08/2025 00:47:15                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
@@ -34,6 +34,6 @@ class TesteController
 
     public function one()
     {
-        return $this->gotta();
+        return $this->gota();
     }
 }
