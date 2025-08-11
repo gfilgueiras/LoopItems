@@ -42,43 +42,19 @@ bannerFormatLine() {
 
 updateBanner() {
     local file="$1"
-    local prefix pattern suffix
-
     if head -n1 "$file" | grep -q '^#!'; then
-        # Arquivo shell script - comentários com ##
         prefix="##"
-        suffix=""  # geralmente sem fechamento no final da linha em shell comments
+        suffix=""
     else
-        # Arquivo C/PHP style - comentários com /* ... */
         prefix="/\\*"
         suffix="\\*/"
     fi
-
-    # Para montar o padrão para sed, considerando prefix e suffix
-    # Exemplo para Last update:
-    pattern="${prefix} ║.*Last update:.*║ ${suffix}"
-
-    # Vamos criar função para montar linha formatada, adaptando para prefix e suffix
-
-    # Exemplo de função bannerFormatLine adaptada para prefix/suffix:
-    bannerFormatLineWithPrefix() {
-        local label="$1"
-        local value="$2"
-        # Preenche espaços para alinhamento: total largura = 101 (exemplo)
-        # A formatação exata depende do seu banner, ajuste conforme precisar
-        printf "%s ║   %-11s % -69s║ %s\n" "$prefix" "$label" "$value" "$suffix"
-    }
-
-    # Agora faz as substituições, criando o comando sed dinâmico
-
-    sed -i.bak -E \
-        -e "s|${prefix} ║.*Last update:.*║ ${suffix}|$(bannerFormatLineWithPrefix "Last update:" "${currentDatetime}")|" \
-        -e "s|${prefix} ║.*User update:.*║ ${suffix}|$(bannerFormatLineWithPrefix "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" \
-        -e "s|${prefix} ║.*Project:.*║ ${suffix}|$(bannerFormatLineWithPrefix "Project:    " "${projectName}")|" \
-        -e "s|${prefix} ║.*License:.*║ ${suffix}|$(bannerFormatLineWithPrefix "License:    " "${bannerLicense}")|" \
-        -e "s|${prefix} ║.*Copyright:.*║ ${suffix}|$(bannerFormatLineWithPrefix "Copyright:  " "${currentYear} ${bannerCompany}")|" \
-        "$file"
-
+    sed -i.bak -E "s|^${prefix} ║.*Last update:.*║ ${suffix}|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*Last update:.*║ \*/|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*Project:.*║ \*/|$(bannerFormatLine "Project:    " "${projectName}")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*License:.*║ \*/|$(bannerFormatLine "License:    " "${bannerLicense}")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*Copyright:.*║ \*/|$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
     rm -f "$file.bak"
     git add "$file"
 }
