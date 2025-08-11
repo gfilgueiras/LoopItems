@@ -56,13 +56,14 @@ insertBanner() {
 processFiles() {
     for file in $FILES; do
         [ ! -f "$file" ] && continue
-        echo $file
 
         if head -n 20 "$file" | grep -q "Copyright:  "; then
             updateBanner "$file"
+            echo "entrei";
             continue
         fi
 
+        echo "sai";
         grep -Fq "$bannerDisplay" "$file" && continue
         insertBanner "$file"
     done
