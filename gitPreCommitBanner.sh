@@ -83,6 +83,7 @@ processFiles() {
         [ ! -f "$file" ] && continue
 
         if head -n 20 "$file" | grep -q "Copyright:  "; then
+            echo "Entrei"
             updateBanner "$file"
             continue
         fi
