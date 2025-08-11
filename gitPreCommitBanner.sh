@@ -43,7 +43,6 @@ bannerFormatLine() {
 updateBanner() {
     local file="$1"
     if head -n1 "$file" | grep -q '^#!'; then
-        echo "aaaaa"
         prefix="##"
         suffix=""
     else
@@ -51,11 +50,6 @@ updateBanner() {
         suffix="\\*/"
     fi
     sed -i.bak -E "s|^${prefix} ║.*Last update:.*║ ${suffix}|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
-    # sed -i.bak -E "s|/\* ║.*Last update:.*║ \*/|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
-    # sed -i.bak -E "s|/\* ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
-    # sed -i.bak -E "s|/\* ║.*Project:.*║ \*/|$(bannerFormatLine "Project:    " "${projectName}")|" "$file"
-    # sed -i.bak -E "s|/\* ║.*License:.*║ \*/|$(bannerFormatLine "License:    " "${bannerLicense}")|" "$file"
-    # sed -i.bak -E "s|/\* ║.*Copyright:.*║ \*/|$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
     rm -f "$file.bak"
     git add "$file"
 }
