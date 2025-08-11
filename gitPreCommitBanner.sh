@@ -13,7 +13,7 @@
 ## ║   License:     MIT                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 19:58:40                                                                  ║
+/* ║   Last update: 11/08/2025 20:36:53                                                                  ║ */
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -43,7 +43,7 @@ bannerFormatLine() {
 updateBanner() {
     local file="$1"
     if head -n1 "$file" | grep -q '^#!'; then
-        echo "asd"
+        sed -i.bak -E "s|^## ║.*Last update:.*║|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
     else
         sed -i.bak -E "s|/\* ║.*Last update:.*║ \*/|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
         sed -i.bak -E "s|/\* ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
