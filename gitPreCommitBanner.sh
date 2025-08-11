@@ -13,7 +13,7 @@
 ## ║   License:     MIT                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ║                                                                                                     ║
-/* ║   Last update: 11/08/2025 20:36:53                                                                  ║ */
+## ║   Last update: 11/08/2025 20:39:36                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -37,7 +37,12 @@ bannerFormatLine() {
     local label="$1"
     local value="$2"
     local text="   ${label} ${value}"
-    printf "/* ║%-${bannerWidth}s║ */\n" "$text"
+
+    if head -n1 "$file" | grep -q '^#!'; then
+        printf "## ║%-${bannerWidth}s║\n" "$text"
+    else
+        printf "/* ║%-${bannerWidth}s║ */\n" "$text"
+    fi
 }
 
 updateBanner() {
