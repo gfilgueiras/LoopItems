@@ -9,13 +9,13 @@
 ## ║                             |_|                                                 |_|                 ║
 ## ║                                                                                                     ║
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
-## ║   Created at:  11/08/2025 19:58:40                                                                  ║
-## ║   License:     MIT                                                                                  ║
-## ║   Copyright:   2025 Octopus Developer                                                               ║
+## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 20:46:21                                                                  ║
+## ║   Last update: 11/08/2025 20:51:10                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
+## ║   License:     MIT                                                                                  ║
+## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 ## *******************************
@@ -119,12 +119,12 @@ $(bannerFormatLine '                          |_|                               
 $(bannerFormatLine '' '')
 $(bannerFormatLine "Author:     " "${gitAuthorName} <${gitAuthorEmail}>")
 $(bannerFormatLine "Created at: " "${currentDatetime}")
-$(bannerFormatLine "License:    " "${bannerLicense}")
-$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")
 $(bannerFormatLine '' '')
 $(bannerFormatLine "Last update:" "${currentDatetime}")
 $(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")
 $(bannerFormatLine "Project:    " "${projectName}")
+$(bannerFormatLine "License:    " "${bannerLicense}")
+$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */"
 
 # Collect the files
