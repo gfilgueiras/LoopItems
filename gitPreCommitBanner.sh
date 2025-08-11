@@ -94,3 +94,4 @@ FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -Ei '\.(php|css|j
 
 # Run
 processFiles
+echo "oi"
