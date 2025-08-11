@@ -13,7 +13,7 @@
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 11/08/2025 19:21:27                                                                  ║ */
+/* ║   Last update: 11/08/2025 20:30:56                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
@@ -29,8 +29,8 @@ class TesteSemNamespace
 {
     public function abb()
     {
-        $a = new FormRequest();
-        $a = new FormRequest();
-        $b = new User();
+        $aa = new FormRequest();
+        $a  = new FormRequest();
+        $b  = new User();
     }
 }

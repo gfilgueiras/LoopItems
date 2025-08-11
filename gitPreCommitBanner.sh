@@ -41,26 +41,19 @@ bannerFormatLine() {
 }
 
 updateBanner() {
-  local file="$1"
-  local prefix suffix newLine newLine_escaped
-
-  if head -n1 "$file" | grep -q '^#!'; then
-    prefix="##"
-    suffix=""
-  else
-    prefix="/\\*"
-    suffix="\\*/"
-  fi
-
-  newLine=$(bannerFormatLine "Last update:" "$currentDatetime")
-  newLine_escaped=$(printf '%s\n' "$newLine" | sed 's/[\/&]/\\&/g')
-
-  sed -i.bak -E "s|^${prefix} ║.*Last update:.*║ ${suffix}|$newLine_escaped|" "$file"
-
-  rm -f "$file.bak"
-  git add "$file"
+    local file="$1"
+    if head -n1 "$file" | grep -q '^#!'; then
+        echo "asd"
+    else
+        sed -i.bak -E "s|/\* ║.*Last update:.*║ \*/|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
+        sed -i.bak -E "s|/\* ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
+        sed -i.bak -E "s|/\* ║.*Project:.*║ \*/|$(bannerFormatLine "Project:    " "${projectName}")|" "$file"
+        sed -i.bak -E "s|/\* ║.*License:.*║ \*/|$(bannerFormatLine "License:    " "${bannerLicense}")|" "$file"
+        sed -i.bak -E "s|/\* ║.*Copyright:.*║ \*/|$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
+    fi
+    rm -f "$file.bak"
+    git add "$file"
 }
-
 
 insertBanner() {
     local file="$1"
