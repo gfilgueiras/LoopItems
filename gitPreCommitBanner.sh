@@ -1,5 +1,22 @@
 #!/bin/sh
-
+## ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+## ║       _____                                      _____                   _                          ║
+## ║      / ___ \       _                            (____ \                 | |                         ║
+## ║     | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____  ║
+## ║     | |   | |/ ___)  _)/ _ \|  _ \| | | |/___)  | |   | / _  ) | | / _  ) |/ _ \|  _ \ / _  )/ ___) ║
+## ║     | |___| ( (___| |_| |_| | | | | |_| |___ |  | |__/ ( (/ / \ V ( (/ /| | |_| | | | ( (/ /| |     ║
+## ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║
+## ║                             |_|                                                 |_|                 ║
+## ║                                                                                                     ║
+## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
+## ║   Created at:  11/08/2025 19:47:05                                                                  ║
+## ║   License:     MIT                                                                                  ║
+## ║   Copyright:   2025 Octopus Developer                                                               ║
+## ║                                                                                                     ║
+## ║   Last update: 11/08/2025 19:47:05                                                                  ║
+## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
+## ║   Project:     Sou Nail Desing                                                                      ║
+## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 ## ********************************
 ## Variáveis                        *
@@ -38,7 +55,7 @@ insertBanner() {
     local file="$1"
 
     if head -n1 "$file" | grep -q '^#!'; then
-        bannerDisplay=$(echo "$bannerDisplay" | sed 's/^\/\* /## /; s/ \*\/$//')
+        bannerToInsert=$(echo "$bannerDisplay" | sed 's/^\/\* /## /; s/ \*\/$//')
     else
         bannerToInsert="$bannerDisplay"
     fi
@@ -66,7 +83,6 @@ processFiles() {
         [ ! -f "$file" ] && continue
 
         if head -n 20 "$file" | grep -q "Copyright:  "; then
-            echo "entrei"
             updateBanner "$file"
             continue
         fi
