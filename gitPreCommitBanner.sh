@@ -59,12 +59,11 @@ processFiles() {
 
         if head -n 20 "$file" | grep -q "Copyright:  "; then
             updateBanner "$file"
-            echo "entrei";
             continue
         fi
 
-        echo "sai";
         grep -Fq "$bannerDisplay" "$file" && continue
+        echo "passei"
         insertBanner "$file"
     done
 }
