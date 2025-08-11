@@ -43,6 +43,7 @@ bannerFormatLine() {
 updateBanner() {
     local file="$1"
     if head -n1 "$file" | grep -q '^#!'; then
+        echo "aaaaa"
         prefix="##"
         suffix=""
     else
