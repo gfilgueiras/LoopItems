@@ -49,7 +49,17 @@ updateBanner() {
         prefix="/\\*"
         suffix="\\*/"
     fi
-    sed -i.bak -E "s|^${prefix} ║.*Last update:.*║ ${suffix}|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
+    # Gera a nova linha que vai substituir (ex: "## ║   Last update: 08/08/2025 12:00:00 ║")
+    newLine=$(bannerFormatLine "Last update:" "${currentDatetime}")
+
+    # Escape barras para sed
+    newLine_escaped=$(printf '%s\n' "$newLine" | sed 's/[\/&]/\\&/g')
+    sed -i.bak -E "s|^${prefix} ║.*Last update:.*║ ${suffix}|$newLine_escaped|" "$file"
+    # sed -i.bak -E "s|/\* ║.*Last update:.*║ \*/|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*Project:.*║ \*/|$(bannerFormatLine "Project:    " "${projectName}")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*License:.*║ \*/|$(bannerFormatLine "License:    " "${bannerLicense}")|" "$file"
+    # sed -i.bak -E "s|/\* ║.*Copyright:.*║ \*/|$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
     rm -f "$file.bak"
     git add "$file"
 }
