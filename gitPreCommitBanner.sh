@@ -39,6 +39,8 @@ insertBanner() {
 
     if head -n1 "$file" | grep -q '^#!'; then
         bannerDisplay=$(echo "$bannerDisplay" | sed 's/^\/\* /## /; s/ \*\/$//')
+    else
+        bannerToInsert="$bannerDisplay"
     fi
 
     if head -n1 "$file" | grep -qE '^(<\?php|#!)'; then
@@ -64,6 +66,7 @@ processFiles() {
         [ ! -f "$file" ] && continue
 
         if head -n 20 "$file" | grep -q "Copyright:  "; then
+            echo "entrei"
             updateBanner "$file"
             continue
         fi
