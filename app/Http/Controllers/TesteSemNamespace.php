@@ -9,11 +9,11 @@
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Created at:  08/08/2025 12:55:07                                                                  ║ */
+/* ║   Created at:  11/08/2025 19:21:27                                                                  ║ */
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 08/08/2025 12:55:35                                                                  ║ */
+/* ║   Last update: 11/08/2025 19:21:27                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
@@ -27,8 +27,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class TesteSemNamespace
 {
-    public function abbb()
+    public function abb()
     {
+        $a = new FormRequest();
         $a = new FormRequest();
         $b = new User();
     }

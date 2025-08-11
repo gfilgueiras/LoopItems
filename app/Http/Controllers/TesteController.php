@@ -13,7 +13,7 @@
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 08/08/2025 12:55:35                                                                  ║ */
+/* ║   Last update: 11/08/2025 19:21:27                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
@@ -28,6 +28,7 @@ class TesteController
 {
     public function gotta()
     {
+        $users = User::all();
         $users = User::all();
         return response()->json($users);
     }
