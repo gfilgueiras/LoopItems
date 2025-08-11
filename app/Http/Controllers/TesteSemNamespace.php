@@ -9,13 +9,13 @@
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Created at:  11/08/2025 19:21:27                                                                  ║ */
-/* ║   License:     MIT                                                                                  ║ */
-/* ║   Copyright:   2025 Octopus Developer                                                               ║ */
+/* ║   Created at:  11/08/2025 20:54:41                                                                  ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 11/08/2025 20:51:20                                                                  ║ */
+/* ║   Last update: 11/08/2025 20:54:41                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
+/* ║   License:     MIT                                                                                  ║ */
+/* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
 
 declare(strict_types=1);
