@@ -1,22 +1,22 @@
 #!/bin/sh
-/* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗ */
-/* ║       _____                                      _____                   _                          ║ */
-/* ║      / ___ \       _                            (____ \                 | |                         ║ */
-/* ║     | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____  ║ */
-/* ║     | |   | |/ ___)  _)/ _ \|  _ \| | | |/___)  | |   | / _  ) | | / _  ) |/ _ \|  _ \ / _  )/ ___) ║ */
-/* ║     | |___| ( (___| |_| |_| | | | | |_| |___ |  | |__/ ( (/ / \ V ( (/ /| | |_| | | | ( (/ /| |     ║ */
-/* ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║ */
-/* ║                             |_|                                                 |_|                 ║ */
-/* ║                                                                                                     ║ */
-/* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Created at:  11/08/2025 19:41:15                                                                  ║ */
-/* ║   License:     MIT                                                                                  ║ */
-/* ║   Copyright:   2025 Octopus Developer                                                               ║ */
-/* ║                                                                                                     ║ */
-/* ║   Last update: 11/08/2025 19:41:15                                                                  ║ */
-/* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Project:     Sou Nail Desing                                                                      ║ */
-/* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
+## ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+## ║       _____                                      _____                   _                          ║ 
+## ║      / ___ \       _                            (____ \                 | |                         ║ 
+## ║     | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____  ║ 
+## ║     | |   | |/ ___)  _)/ _ \|  _ \| | | |/___)  | |   | / _  ) | | / _  ) |/ _ \|  _ \ / _  )/ ___) ║ 
+## ║     | |___| ( (___| |_| |_| | | | | |_| |___ |  | |__/ ( (/ / \ V ( (/ /| | |_| | | | ( (/ /| |     ║ 
+## ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║ 
+## ║                             |_|                                                 |_|                 ║ 
+## ║                                                                                                     ║ 
+## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ 
+## ║   Created at:  11/08/2025 19:45:11                                                                  ║ 
+## ║   License:     MIT                                                                                  ║ 
+## ║   Copyright:   2025 Octopus Developer                                                               ║ 
+## ║                                                                                                     ║ 
+## ║   Last update: 11/08/2025 19:45:11                                                                  ║ 
+## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ 
+## ║   Project:     Sou Nail Desing                                                                      ║ 
+## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ 
 
 ## ********************************
 ## Variáveis                        *
@@ -53,16 +53,23 @@ updateBanner() {
 
 insertBanner() {
     local file="$1"
+
+    if head -n1 "$file" | grep -q '^#!'; then
+        bannerToInsert=$(echo "$bannerDisplay" | sed 's/^\/\* /## /; s/ \*\/$/ /')
+    else
+        bannerToInsert="$bannerDisplay"
+    fi
+
     if head -n1 "$file" | grep -qE '^(<\?php|#!)'; then
         {
             head -n1 "$file"
-            echo "$bannerDisplay"
+            echo "$bannerToInsert"
 
             tail -n +2 "$file"
         } > "$file.tmp"
     else
         {
-            echo "$bannerDisplay"
+            echo "$bannerToInsert"
             echo
             cat "$file"
         } > "$file.tmp"
@@ -81,7 +88,6 @@ processFiles() {
         fi
 
         head -n 20 "$file" | grep -Fq "$bannerDisplay" && continue
-        echo "passei"
         insertBanner "$file"
     done
 }
