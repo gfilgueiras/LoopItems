@@ -9,16 +9,16 @@
 ## ║                             |_|                                                 |_|                 ║
 ## ║                                                                                                     ║
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
-## ║   Created at:  11/08/2025 19:56:23                                                                  ║
+## ║   Created at:  11/08/2025 19:58:40                                                                  ║
 ## ║   License:     MIT                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 19:56:23                                                                  ║
+## ║   Last update: 11/08/2025 19:58:40                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-## *******************************
+## ********************************
 ## Variáveis                        *
 ## **********************************
 currentYear=$(date +%Y)
