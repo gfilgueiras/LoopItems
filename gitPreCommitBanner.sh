@@ -55,9 +55,7 @@ insertBanner() {
     local file="$1"
 
     if head -n1 "$file" | grep -q '^#!'; then
-        bannerToInsert=$(echo "$bannerDisplay" | sed 's/^\/\* /## /; s/ \*\/$//')
-    else
-        bannerToInsert="$bannerDisplay"
+        bannerDisplay=$(echo "$bannerDisplay" | sed 's/^\/\* /## /; s/ \*\/$//')
     fi
 
     if head -n1 "$file" | grep -qE '^(<\?php|#!)'; then
