@@ -8,11 +8,11 @@
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Created at:  11/08/2025 19:37:56                                                                  ║ */
+/* ║   Created at:  11/08/2025 19:40:28                                                                  ║ */
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 11/08/2025 19:37:56                                                                  ║ */
+/* ║   Last update: 11/08/2025 19:40:28                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
@@ -81,7 +81,7 @@ processFiles() {
             continue
         fi
 
-        # grep -Fq "$bannerDisplay" "$file" && continue
+        head -n 20 "$file" | grep -Fq "$bannerDisplay" && continue
         echo "passei"
         insertBanner "$file"
     done
