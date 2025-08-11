@@ -55,8 +55,8 @@ insertBanner() {
 
 processFiles() {
     for file in $FILES; do
-        echo $file
         [ ! -f "$file" ] && continue
+        echo $file
 
         if head -n 20 "$file" | grep -q "Copyright:  "; then
             updateBanner "$file"
