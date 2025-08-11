@@ -12,10 +12,9 @@
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 11/08/2025 19:23:22                                                                  ║ */
+/* ║   Last update: 11/08/2025 19:23:32                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
 
 import './bootstrap';
-
