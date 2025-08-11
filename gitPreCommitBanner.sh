@@ -1,3 +1,4 @@
+#!/bin/sh
 /* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗ */
 /* ║       _____                                      _____                   _                          ║ */
 /* ║      / ___ \       _                            (____ \                 | |                         ║ */
@@ -8,16 +9,14 @@
 /* ║                             |_|                                                 |_|                 ║ */
 /* ║                                                                                                     ║ */
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
-/* ║   Created at:  11/08/2025 19:40:28                                                                  ║ */
+/* ║   Created at:  11/08/2025 19:41:15                                                                  ║ */
 /* ║   License:     MIT                                                                                  ║ */
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 11/08/2025 19:40:28                                                                  ║ */
+/* ║   Last update: 11/08/2025 19:41:15                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
-
-#!/bin/sh
 
 ## ********************************
 ## Variáveis                        *
@@ -54,7 +53,7 @@ updateBanner() {
 
 insertBanner() {
     local file="$1"
-    if head -n1 "$file" | grep -q "^<?php"; then
+    if head -n1 "$file" | grep -qE '^(<\?php|#!)'; then
         {
             head -n1 "$file"
             echo "$bannerDisplay"
