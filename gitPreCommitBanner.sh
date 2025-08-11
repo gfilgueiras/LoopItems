@@ -41,29 +41,26 @@ bannerFormatLine() {
 }
 
 updateBanner() {
-    local file="$1"
-    local prefix suffix
-    local newLine newLine_escaped
+  local file="$1"
+  local prefix suffix newLine newLine_escaped
 
-    if head -n1 "$file" | grep -q '^#!'; then
-        prefix="##"
-        suffix=""
-    else
-        prefix="/\\*"
-        suffix="\\*/"
-    fi
-    # Gera a linha formatada para o banner (sem quebras de linha!)
-    newLine=$(bannerFormatLine "Last update:" "${currentDatetime}")
+  if head -n1 "$file" | grep -q '^#!'; then
+    prefix="##"
+    suffix=""
+  else
+    prefix="/\\*"
+    suffix="\\*/"
+  fi
 
-    # Escapa caracteres problemáticos para sed (barra e &)
-    newLine_escaped=$(printf '%s\n' "$newLine" | sed 's/[\/&]/\\&/g')
+  newLine=$(bannerFormatLine "Last update:" "$currentDatetime")
+  newLine_escaped=$(printf '%s\n' "$newLine" | sed 's/[\/&]/\\&/g')
 
-    # Executa substituição sed usando o padrão prefix...suffix e a linha formatada
-    sed -i.bak -E "s|^${prefix} ║.*Last update:.*║ ${suffix}|$newLine_escaped|" "$file"
+  sed -i.bak -E "s|^${prefix} ║.*Last update:.*║ ${suffix}|$newLine_escaped|" "$file"
 
-    rm -f "$file.bak"
-    git add "$file"
+  rm -f "$file.bak"
+  git add "$file"
 }
+
 
 insertBanner() {
     local file="$1"
