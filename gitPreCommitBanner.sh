@@ -13,7 +13,7 @@
 ## ║   License:     MIT                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 20:39:36                                                                  ║
+## ║   Last update: 11/08/2025 20:46:21                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -49,6 +49,10 @@ updateBanner() {
     local file="$1"
     if head -n1 "$file" | grep -q '^#!'; then
         sed -i.bak -E "s|^## ║.*Last update:.*║|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
+        sed -i.bak -E "s|^## ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
+        sed -i.bak -E "s|^## ║.*Project:.*║ \*/|$(bannerFormatLine "Project:    " "${projectName}")|" "$file"
+        sed -i.bak -E "s|^## ║.*License:.*║ \*/|$(bannerFormatLine "License:    " "${bannerLicense}")|" "$file"
+        sed -i.bak -E "s|^## ║.*Copyright:.*║ \*/|$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
     else
         sed -i.bak -E "s|/\* ║.*Last update:.*║ \*/|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
         sed -i.bak -E "s|/\* ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
