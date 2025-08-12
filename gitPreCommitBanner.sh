@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 22:58:59                                                                  ║
+## ║   Last update: 11/08/2025 23:08:28                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ║   License:     MIT                                                                                  ║
@@ -39,6 +39,7 @@ projectName="Sou Nail Desing"
 bannerFormatLine() {
     local label="$1"
     local value="$2"
+    local file="$3"
     local text="   ${label} ${value}"
 
     if head -n1 "$file" | grep -q '^#!'; then
@@ -51,7 +52,8 @@ bannerFormatLine() {
 updateBanner() {
     local file="$1"
     if head -n1 "$file" | grep -q '^#!'; then
-        sed -i.bak -E "s|^## ║.*Last update:.*║|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
+        # sed -i.bak -E "s|^## ║.*Last update:.*║|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
+        sed -i.bak -E "s|^## ║.*Last update:.*║|$(bannerFormatLine "Last update:" "${currentDatetime}" "$file")|" "$file"
         sed -i.bak -E "s|^## ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
         sed -i.bak -E "s|^## ║.*Project:.*║ \*/|$(bannerFormatLine "Project:    " "${projectName}")|" "$file"
         sed -i.bak -E "s|^## ║.*License:.*║ \*/|$(bannerFormatLine "License:    " "${bannerLicense}")|" "$file"
