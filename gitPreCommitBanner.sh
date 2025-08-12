@@ -9,16 +9,16 @@
 ## ║                             |_|                                                 |_|                 ║
 ## ║                                                                                                     ║
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
-## ║   Created at:  12/08/2025 20:34:59                                                                  ║
+## ║   Created at:  12/08/2025 20:42:40                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 12/08/2025 20:34:59                                                                  ║
+## ║   Last update: 12/08/2025 20:42:40                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Base Project Laravel (RVA)                                                           ║
 ## ║   License:     GNU                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-## *******************************
+## **********************************
 ## Variáveis                        *
 ## **********************************
 root_dir="$(git rev-parse --show-toplevel)"
@@ -99,7 +99,7 @@ insertBanner() {
 }
 
 processFiles() {
-    for file in "$1"; do
+    for file in "$@"; do
         [ ! -f "$file" ] && continue
 
         if head -n 20 "$file" | grep -q "Copyright:  "; then
@@ -135,4 +135,4 @@ $(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */"
 
 # Run
-processFiles "$FILES"
+processFiles $FILES
