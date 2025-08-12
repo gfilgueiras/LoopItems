@@ -1,4 +1,22 @@
 <?php
+/* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗ */
+/* ║       _____                                      _____                   _                          ║ */
+/* ║      / ___ \       _                            (____ \                 | |                         ║ */
+/* ║     | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____  ║ */
+/* ║     | |   | |/ ___)  _)/ _ \|  _ \| | | |/___)  | |   | / _  ) | | / _  ) |/ _ \|  _ \ / _  )/ ___) ║ */
+/* ║     | |___| ( (___| |_| |_| | | | | |_| |___ |  | |__/ ( (/ / \ V ( (/ /| | |_| | | | ( (/ /| |     ║ */
+/* ║      \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|     ║ */
+/* ║                             |_|                                                 |_|                 ║ */
+/* ║                                                                                                     ║ */
+/* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
+/* ║   Created at:  12/08/2025 20:28:53                                                                  ║ */
+/* ║                                                                                                     ║ */
+/* ║   Last update: 12/08/2025 20:28:53                                                                  ║ */
+/* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
+/* ║   Project:     Base Project Laravel (RVA)                                                           ║ */
+/* ║   License:     GNU                                                                                  ║ */
+/* ║   Copyright:   2025 Octopus Developer                                                               ║ */
+/* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
 
 declare(strict_types=1);
 
@@ -6,7 +24,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StatusStoreRequest;
 use App\Http\Resources\StatusColletionResource;
-use App\Http\Resources\StatusResource;
 use App\Models\Status;
 use App\Models\User;
 use App\Service\Response\ApiResponse;
@@ -24,9 +41,8 @@ class StatusController extends Controller
 
     public function create(StatusStoreRequest $request)
     {
-        $array      = [];
-        $statusData = Status::query()->create($record->toPersist());
-        return ApiResponse::check(new StatusResource($statusData), 201);
+        $array = [];
+        return $array;
     }
 
     public function store(Request $request)
