@@ -11,9 +11,9 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:46:24                                                                  ║
+## ║   Last update: 11/08/2025 23:48:44                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
-## ║   Project:     Sou Nail Desing                                                                      ║
+## ║   Project:     c_PROJECT_LICENSE=GNU                                                                ║
 ## ║   License:     GNU                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -29,8 +29,9 @@ bannerWidth=101
 
 gitAuthorName=$(git config user.name)
 gitAuthorEmail=$(git config user.email)
-projectName="Sou Nail Desing"
+projectName=$(grep -i '^\s*c_PROJECT_LICENSE\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_FRIENDLY_NAME\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
 bannerLicense=$(grep -i '^\s*c_PROJECT_LICENSE\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_LICENSE\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
+
 bannerCompany="Octopus Developer"
 
 
