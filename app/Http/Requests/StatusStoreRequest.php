@@ -1,3 +1,7 @@
+
+/**
+ * Copyright (c) 2025 Sua Empresa. Todos os direitos reservados.
+ */
 <?php
 
 namespace App\Http\Requests;
@@ -14,14 +18,14 @@ class StatusStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['require', 'string'],
+            'title' => ['required', 'string'],
         ];
     }
 
     public function messages(): array
     {
         return [
-            'title.require' => 'Please add a title — we can’t save this without one.',
+            'title.required' => 'Plase add a title — we can’t save this without one.',
             'title.string' => 'That title doesn’t look right. Try using words or a short sentence.',
         ];
     }
