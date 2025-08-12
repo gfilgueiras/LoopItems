@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:55:19                                                                  ║
+## ║   Last update: 11/08/2025 23:55:52                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Base Project Laravel (RVA)                                                           ║
 ## ║   License:     GNU                                                                                  ║
@@ -32,8 +32,31 @@ projectName=$(grep -i '^\s*c_PROJECT_FRIENDLY_NAME\s*=' "$env_file" | head -1 | 
 bannerLicense=$(grep -i '^\s*c_PROJECT_LICENSE\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_LICENSE\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
 bannerCompany=$(grep -i '^\s*SOFTWARE_FABRIC_NAME\s*=' "$env_file" | head -1 | sed -E 's/^\s*SOFTWARE_FABRIC_NAME\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
 
+## **********************************
+## Banner                           *
+## **********************************
+bannerDisplay="/* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗ */
+$(bannerFormatLine "$file" '    _____                                      _____                   _' '')
+$(bannerFormatLine "$file" '   / ___ \       _                            (____ \                 | |' '')
+$(bannerFormatLine "$file" '  | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____' '')
+$(bannerFormatLine "$file" '  | |   | |/ ___)  _)/ _ \|  _ \| | | |/___)  | |   | / _  ) | | / _  ) |/ _ \|  _ \ / _  )/ ___)' '')
+$(bannerFormatLine "$file" '  | |___| ( (___| |_| |_| | | | | |_| |___ |  | |__/ ( (/ / \ V ( (/ /| | |_| | | | ( (/ /| |' '')
+$(bannerFormatLine "$file" '   \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|' '')
+$(bannerFormatLine "$file" '                          |_|                                                 |_|' '')
+$(bannerFormatLine "$file" '' '')
+$(bannerFormatLine "$file" "Author:     " "${gitAuthorName} <${gitAuthorEmail}>")
+$(bannerFormatLine "$file" "Created at: " "${currentDatetime}")
+$(bannerFormatLine "$file" '' '')
+$(bannerFormatLine "$file" "Last update:" "${currentDatetime}")
+$(bannerFormatLine "$file" "User update:" "${gitAuthorName} <${gitAuthorEmail}>")
+$(bannerFormatLine "$file" "Project:    " "${projectName}")
+$(bannerFormatLine "$file" "License:    " "${bannerLicense}")
+$(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")
+/* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */"
+
 # Collect the files
 FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -Ei '\.(php|css|js|sh)$')
+
 
 
 ## **********************************
@@ -112,27 +135,7 @@ processFiles() {
     done
 }
 
-## **********************************
-## Banner                           *
-## **********************************
-bannerDisplay="/* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗ */
-$(bannerFormatLine "$file" '    _____                                      _____                   _' '')
-$(bannerFormatLine "$file" '   / ___ \       _                            (____ \                 | |' '')
-$(bannerFormatLine "$file" '  | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____' '')
-$(bannerFormatLine "$file" '  | |   | |/ ___)  _)/ _ \|  _ \| | | |/___)  | |   | / _  ) | | / _  ) |/ _ \|  _ \ / _  )/ ___)' '')
-$(bannerFormatLine "$file" '  | |___| ( (___| |_| |_| | | | | |_| |___ |  | |__/ ( (/ / \ V ( (/ /| | |_| | | | ( (/ /| |' '')
-$(bannerFormatLine "$file" '   \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|' '')
-$(bannerFormatLine "$file" '                          |_|                                                 |_|' '')
-$(bannerFormatLine "$file" '' '')
-$(bannerFormatLine "$file" "Author:     " "${gitAuthorName} <${gitAuthorEmail}>")
-$(bannerFormatLine "$file" "Created at: " "${currentDatetime}")
-$(bannerFormatLine "$file" '' '')
-$(bannerFormatLine "$file" "Last update:" "${currentDatetime}")
-$(bannerFormatLine "$file" "User update:" "${gitAuthorName} <${gitAuthorEmail}>")
-$(bannerFormatLine "$file" "Project:    " "${projectName}")
-$(bannerFormatLine "$file" "License:    " "${bannerLicense}")
-$(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")
-/* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */"
+
 
 # Run
 processFiles "$FILES"
