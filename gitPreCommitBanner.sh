@@ -11,34 +11,36 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:33:50                                                                  ║
+## ║   Last update: 11/08/2025 23:42:43                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ║   License:     GNU                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-## *********************************
+## **********************************
 ## Variáveis                        *
 ## **********************************
 root_dir="$(git rev-parse --show-toplevel)"
 env_file="$root_dir/.env"
-
 currentYear=$(date +%Y)
 currentDatetime=$(date +"%d/%m/%Y %H:%M:%S")
-bannerLicense=$(grep -i '^\s*c_PROJECT_LICENSE\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_LICENSE\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
-bannerCompany="Octopus Developer"
 bannerWidth=101
+
 gitAuthorName=$(git config user.name)
 gitAuthorEmail=$(git config user.email)
 projectName="Sou Nail Desing"
+bannerLicense=$(grep -i '^\s*c_PROJECT_LICENSE\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_LICENSE\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
+bannerCompany="Octopus Developer"
+
 
 ## **********************************
 ## Funções.                         *
 ## **********************************
 bannerFormatLine() {
-    local label="$1"
-    local value="$2"
+    local file="$1"
+    local label="$2"
+    local value="$3"
     local text="   ${label} ${value}"
 
     if head -n1 "$file" | grep -q '^#!'; then
@@ -51,17 +53,17 @@ bannerFormatLine() {
 updateBanner() {
     local file="$1"
     if head -n1 "$file" | grep -q '^#!'; then
-        sed -i.bak -E "s|^## ║.*Last update:.*║|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
-        sed -i.bak -E "s|^## ║.*User update:.*║|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
-        sed -i.bak -E "s|^## ║.*Project:.*║|$(bannerFormatLine "Project:    " "${projectName}")|" "$file"
-        sed -i.bak -E "s|^## ║.*License:.*║|$(bannerFormatLine "License:    " "${bannerLicense}")|" "$file"
-        sed -i.bak -E "s|^## ║.*Copyright:.*║|$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
+        sed -i.bak -E "s|^## ║.*Last update:.*║|$(bannerFormatLine "$file" "Last update:" "${currentDatetime}")|" "$file"
+        sed -i.bak -E "s|^## ║.*User update:.*║|$(bannerFormatLine "$file" "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
+        sed -i.bak -E "s|^## ║.*Project:.*║|$(bannerFormatLine "$file" "Project:    " "${projectName}")|" "$file"
+        sed -i.bak -E "s|^## ║.*License:.*║|$(bannerFormatLine "$file" "License:    " "${bannerLicense}")|" "$file"
+        sed -i.bak -E "s|^## ║.*Copyright:.*║|$(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
     else
-        sed -i.bak -E "s|/\* ║.*Last update:.*║ \*/|$(bannerFormatLine "Last update:" "${currentDatetime}")|" "$file"
-        sed -i.bak -E "s|/\* ║.*User update:.*║ \*/|$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
-        sed -i.bak -E "s|/\* ║.*Project:.*║ \*/|$(bannerFormatLine "Project:    " "${projectName}")|" "$file"
-        sed -i.bak -E "s|/\* ║.*License:.*║ \*/|$(bannerFormatLine "License:    " "${bannerLicense}")|" "$file"
-        sed -i.bak -E "s|/\* ║.*Copyright:.*║ \*/|$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
+        sed -i.bak -E "s|/\* ║.*Last update:.*║ \*/|$(bannerFormatLine "$file" "Last update:" "${currentDatetime}")|" "$file"
+        sed -i.bak -E "s|/\* ║.*User update:.*║ \*/|$(bannerFormatLine "$file" "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
+        sed -i.bak -E "s|/\* ║.*Project:.*║ \*/|$(bannerFormatLine "$file" "Project:    " "${projectName}")|" "$file"
+        sed -i.bak -E "s|/\* ║.*License:.*║ \*/|$(bannerFormatLine "$file" "License:    " "${bannerLicense}")|" "$file"
+        sed -i.bak -E "s|/\* ║.*Copyright:.*║ \*/|$(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
     fi
     rm -f "$file.bak"
     git add "$file"
@@ -112,22 +114,22 @@ processFiles() {
 ## Banner                           *
 ## **********************************
 bannerDisplay="/* ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗ */
-$(bannerFormatLine '    _____                                      _____                   _' '')
-$(bannerFormatLine '   / ___ \       _                            (____ \                 | |' '')
-$(bannerFormatLine '  | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____' '')
-$(bannerFormatLine '  | |   | |/ ___)  _)/ _ \|  _ \| | | |/___)  | |   | / _  ) | | / _  ) |/ _ \|  _ \ / _  )/ ___)' '')
-$(bannerFormatLine '  | |___| ( (___| |_| |_| | | | | |_| |___ |  | |__/ ( (/ / \ V ( (/ /| | |_| | | | ( (/ /| |' '')
-$(bannerFormatLine '   \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|' '')
-$(bannerFormatLine '                          |_|                                                 |_|' '')
-$(bannerFormatLine '' '')
-$(bannerFormatLine "Author:     " "${gitAuthorName} <${gitAuthorEmail}>")
-$(bannerFormatLine "Created at: " "${currentDatetime}")
-$(bannerFormatLine '' '')
-$(bannerFormatLine "Last update:" "${currentDatetime}")
-$(bannerFormatLine "User update:" "${gitAuthorName} <${gitAuthorEmail}>")
-$(bannerFormatLine "Project:    " "${projectName}")
-$(bannerFormatLine "License:    " "${bannerLicense}")
-$(bannerFormatLine "Copyright:  " "${currentYear} ${bannerCompany}")
+$(bannerFormatLine "$file" '    _____                                      _____                   _' '')
+$(bannerFormatLine "$file" '   / ___ \       _                            (____ \                 | |' '')
+$(bannerFormatLine "$file" '  | |   | | ____| |_  ___  ____  _   _  ___    _   \ \ ____ _   _ ____| | ___  ____   ____  ____' '')
+$(bannerFormatLine "$file" '  | |   | |/ ___)  _)/ _ \|  _ \| | | |/___)  | |   | / _  ) | | / _  ) |/ _ \|  _ \ / _  )/ ___)' '')
+$(bannerFormatLine "$file" '  | |___| ( (___| |_| |_| | | | | |_| |___ |  | |__/ ( (/ / \ V ( (/ /| | |_| | | | ( (/ /| |' '')
+$(bannerFormatLine "$file" '   \_____/ \____)\___)___/| ||_/ \____(___/   |_____/ \____) \_/ \____)_|\___/| ||_/ \____)_|' '')
+$(bannerFormatLine "$file" '                          |_|                                                 |_|' '')
+$(bannerFormatLine "$file" '' '')
+$(bannerFormatLine "$file" "Author:     " "${gitAuthorName} <${gitAuthorEmail}>")
+$(bannerFormatLine "$file" "Created at: " "${currentDatetime}")
+$(bannerFormatLine "$file" '' '')
+$(bannerFormatLine "$file" "Last update:" "${currentDatetime}")
+$(bannerFormatLine "$file" "User update:" "${gitAuthorName} <${gitAuthorEmail}>")
+$(bannerFormatLine "$file" "Project:    " "${projectName}")
+$(bannerFormatLine "$file" "License:    " "${bannerLicense}")
+$(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */"
 
 # Collect the files
