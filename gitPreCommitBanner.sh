@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-/* ║   Last update: 11/08/2025 23:13:32                                                                  ║ */
+## ║   Last update: 11/08/2025 23:15:39                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ║   License:     MIT                                                                                  ║
@@ -39,7 +39,6 @@ projectName="Sou Nail Desing"
 bannerFormatLine() {
     local label="$1"
     local value="$2"
-    local file="$3"
     local text="   ${label} ${value}"
 
     if head -n1 "$file" | grep -q '^#!'; then
