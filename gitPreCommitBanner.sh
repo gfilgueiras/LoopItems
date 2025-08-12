@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:53:54                                                                  ║
+## ║   Last update: 11/08/2025 23:55:19                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Base Project Laravel (RVA)                                                           ║
 ## ║   License:     GNU                                                                                  ║
@@ -26,12 +26,14 @@ env_file="$root_dir/.env"
 currentYear=$(date +%Y)
 currentDatetime=$(date +"%d/%m/%Y %H:%M:%S")
 bannerWidth=101
-
 gitAuthorName=$(git config user.name)
 gitAuthorEmail=$(git config user.email)
 projectName=$(grep -i '^\s*c_PROJECT_FRIENDLY_NAME\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_FRIENDLY_NAME\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
 bannerLicense=$(grep -i '^\s*c_PROJECT_LICENSE\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_LICENSE\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
 bannerCompany=$(grep -i '^\s*SOFTWARE_FABRIC_NAME\s*=' "$env_file" | head -1 | sed -E 's/^\s*SOFTWARE_FABRIC_NAME\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
+
+# Collect the files
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -Ei '\.(php|css|js|sh)$')
 
 
 ## **********************************
@@ -131,9 +133,6 @@ $(bannerFormatLine "$file" "Project:    " "${projectName}")
 $(bannerFormatLine "$file" "License:    " "${bannerLicense}")
 $(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */"
-
-# Collect the files
-FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -Ei '\.(php|css|js|sh)$')
 
 # Run
 processFiles "$FILES"
