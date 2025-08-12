@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 22:29:17                                                                  ║
+## ║   Last update: 11/08/2025 22:33:33                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ║   License:     MIT                                                                                  ║
@@ -23,8 +23,6 @@
 ## **********************************
 root_dir="$(git rev-parse --show-toplevel)"
 env_file="$root_dir/.env"
-
-echo "$env_file"
 
 currentYear=$(date +%Y)
 currentDatetime=$(date +"%d/%m/%Y %H:%M:%S")
