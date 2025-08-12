@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:51:40                                                                  ║
+## ║   Last update: 11/08/2025 23:53:54                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Base Project Laravel (RVA)                                                           ║
 ## ║   License:     GNU                                                                                  ║
@@ -97,7 +97,7 @@ insertBanner() {
 }
 
 processFiles() {
-    for file in $FILES; do
+    for file in "$1"; do
         [ ! -f "$file" ] && continue
 
         if head -n 20 "$file" | grep -q "Copyright:  "; then
@@ -136,4 +136,4 @@ $(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")
 FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -Ei '\.(php|css|js|sh)$')
 
 # Run
-processFiles
+processFiles "$FILES"
