@@ -11,14 +11,14 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:50:25                                                                  ║
+## ║   Last update: 11/08/2025 23:51:40                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Base Project Laravel (RVA)                                                           ║
 ## ║   License:     GNU                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-## *********************************
+## **********************************
 ## Variáveis                        *
 ## **********************************
 root_dir="$(git rev-parse --show-toplevel)"
@@ -31,8 +31,7 @@ gitAuthorName=$(git config user.name)
 gitAuthorEmail=$(git config user.email)
 projectName=$(grep -i '^\s*c_PROJECT_FRIENDLY_NAME\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_FRIENDLY_NAME\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
 bannerLicense=$(grep -i '^\s*c_PROJECT_LICENSE\s*=' "$env_file" | head -1 | sed -E 's/^\s*c_PROJECT_LICENSE\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
-
-bannerCompany="Octopus Developer"
+bannerCompany=$(grep -i '^\s*SOFTWARE_FABRIC_NAME\s*=' "$env_file" | head -1 | sed -E 's/^\s*SOFTWARE_FABRIC_NAME\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
 
 
 ## **********************************
