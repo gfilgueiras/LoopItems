@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 22:02:53                                                                  ║
+## ║   Last update: 11/08/2025 22:09:41                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ║   License:     MIT                                                                                  ║
@@ -22,10 +22,11 @@
 ## Variáveis                        *
 ## **********************************
 root_dir=$(git rev-parse --show-toplevel)
+env_file="$root_dir/.env"
 
 currentYear=$(date +%Y)
 currentDatetime=$(date +"%d/%m/%Y %H:%M:%S")
-bannerLicense=$(grep -i '^c_PROJECT_LICENSE' "$root_dir/.env" | head -1 | sed -E 's/^[^=]+= *"?([^"]+)"?.*$/\1/' | xargs)
+bannerLicense=$(grep -i '^c_PROJECT_LICENSE' "$env_file" | head -1 | cut -d '=' -f2- | tr -d '"' | xargs)
 bannerCompany="Octopus Developer"
 bannerWidth=101
 gitAuthorName=$(git config user.name)
