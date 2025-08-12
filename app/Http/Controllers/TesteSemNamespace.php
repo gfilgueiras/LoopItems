@@ -11,7 +11,7 @@
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Created at:  11/08/2025 20:54:41                                                                  ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 11/08/2025 22:41:04                                                                  ║ */
+/* ║   Last update: 11/08/2025 23:12:35                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Sou Nail Desing                                                                      ║ */
 /* ║   License:     GNU                                                                                  ║ */
@@ -29,8 +29,8 @@ class TesteSemNamespace
 {
     public function abb()
     {
-        $ff = new FormRequest();
-        $a  = new FormRequest();
-        $b  = new User();
+        $f = new FormRequest();
+        $a = new FormRequest();
+        $b = new User();
     }
 }
