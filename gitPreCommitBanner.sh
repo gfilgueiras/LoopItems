@@ -11,11 +11,11 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:23:00                                                                  ║
-## ║   User update: gfilgueirasrj@gmail.com <gfilgueirasrj@gmail.com>                                    ║
-## ║   Project:     Sou Nail Desing                                                                      ║
-## ║   License:     GNU                                                                                  ║
-## ║   Copyright:   2025 Octopus Developer                                                               ║
+/* ║   Last update: 11/08/2025 23:26:22                                                                  ║ */
+/* ║   User update: gfilgueirasrj@gmail.com <gfilgueirasrj@gmail.com>                                    ║ */
+/* ║   Project:     Sou Nail Desing                                                                      ║ */
+/* ║   License:     GNU                                                                                  ║ */
+/* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 ## **********************************
@@ -40,12 +40,7 @@ bannerFormatLine() {
     local label="$1"
     local value="$2"
     local text="   ${label} ${value}"
-
-    if head -n1 "$file" | grep -q '^#!'; then
-        printf "## ║%-${bannerWidth}s║\n" "$text"
-    else
-        printf "/* ║%-${bannerWidth}s║ */\n" "$text"
-    fi
+    printf "/* ║%-${bannerWidth}s║ */\n" "$text"
 }
 
 updateBanner() {
