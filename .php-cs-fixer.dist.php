@@ -18,7 +18,6 @@
 /* ║   Copyright:   2025 Octopus Developer                                                               ║ */
 /* ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝ */
 
-
 declare(strict_types=1);
 
 use PhpCsFixer\Config;
@@ -38,6 +37,7 @@ return $config
     ->setFinder($finder)
     ->setRules([
         '@PSR12'                          => true,
+        'blank_line_after_opening_tag'    => false,
         'strict_param'                    => true,
         'array_syntax'                    => ['syntax' => 'short'],
         'binary_operator_spaces'          => ['default' => 'align_single_space_minimal'],

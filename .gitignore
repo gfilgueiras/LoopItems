@@ -30,6 +30,8 @@
 .env.backup
 .env.production
 
+.DS_Store
+
 !/myFolder/.gitkeep
 
 auth.json

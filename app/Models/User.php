@@ -1,3 +1,7 @@
+
+/**
+ * Copyright (c) 2025 Sua Empresa. Todos os direitos reservados.
+ */
 <?php
 
 namespace App\Models;
@@ -26,6 +30,11 @@ class User extends Authenticatable
         'password',
         'rememberToken',
     ];
+
+    public function myTodo(): string
+    {
+        return 'asdasda';
+    }
 
     public function status(): BelongsTo
     {
