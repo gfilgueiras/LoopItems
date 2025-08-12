@@ -11,8 +11,8 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:29:02                                                                  ║
-## ║   User update: gfilgueirasrj@gmail.com <gfilgueirasrj@gmail.com>                                    ║
+## ║   Last update: 11/08/2025 23:29:19                                                                  ║
+## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ║   License:     GNU                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
@@ -53,7 +53,7 @@ updateBanner() {
     local file="$1"
     if head -n1 "$file" | grep -q '^#!'; then
         sed -i.bak -E "s|^## ║.*Last update:.*║|$(bannerFormatLine "$file" "Last update:" "${currentDatetime}")|" "$file"
-        sed -i.bak -E "s|^## ║.*User update:.*║|$(bannerFormatLine "$file" "User update:" "${gitAuthorEmail} <${gitAuthorEmail}>")|" "$file"
+        sed -i.bak -E "s|^## ║.*User update:.*║|$(bannerFormatLine "$file" "User update:" "${gitAuthorName} <${gitAuthorEmail}>")|" "$file"
         sed -i.bak -E "s|^## ║.*Project:.*║|$(bannerFormatLine "$file" "Project:    " "${projectName}")|" "$file"
         sed -i.bak -E "s|^## ║.*License:.*║|$(bannerFormatLine "$file" "License:    " "${bannerLicense}")|" "$file"
         sed -i.bak -E "s|^## ║.*Copyright:.*║|$(bannerFormatLine "$file" "Copyright:  " "${currentYear} ${bannerCompany}")|" "$file"
