@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  11/08/2025 20:51:10                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 11/08/2025 23:42:43                                                                  ║
+## ║   Last update: 11/08/2025 23:46:24                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Sou Nail Desing                                                                      ║
 ## ║   License:     GNU                                                                                  ║
@@ -43,7 +43,7 @@ bannerFormatLine() {
     local value="$3"
     local text="   ${label} ${value}"
 
-    if head -n1 "$file" | grep -q '^#!'; then
+    if [ -n "$file" ] && head -n1 "$file" | grep -q '^#!'; then
         printf "## ║%-${bannerWidth}s║\n" "$text"
     else
         printf "/* ║%-${bannerWidth}s║ */\n" "$text"
