@@ -11,14 +11,14 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  12/08/2025 20:42:40                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 12/08/2025 20:42:40                                                                  ║
+## ║   Last update: 12/08/2025 21:02:52                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Base Project Laravel (RVA)                                                           ║
 ## ║   License:     GNU                                                                                  ║
 ## ║   Copyright:   2025 Octopus Developer                                                               ║
 ## ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-## **********************************
+## *********************************
 ## Variáveis                        *
 ## **********************************
 root_dir="$(git rev-parse --show-toplevel)"

@@ -11,7 +11,7 @@
 /* ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Created at:  12/08/2025 20:42:40                                                                  ║ */
 /* ║                                                                                                     ║ */
-/* ║   Last update: 12/08/2025 20:42:40                                                                  ║ */
+/* ║   Last update: 12/08/2025 21:02:52                                                                  ║ */
 /* ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║ */
 /* ║   Project:     Base Project Laravel (RVA)                                                           ║ */
 /* ║   License:     GNU                                                                                  ║ */
@@ -47,7 +47,7 @@ class StatusController extends Controller
 
     public function store(Request $request)
     {
-        // -- cria registro vindo do create
+        // -- cria registro vindo do creat
     }
 
     public function show(string $id)
