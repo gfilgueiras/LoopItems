@@ -11,7 +11,7 @@
 ## ║   Author:      Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Created at:  12/08/2025 20:42:40                                                                  ║
 ## ║                                                                                                     ║
-## ║   Last update: 12/08/2025 21:17:19                                                                  ║
+## ║   Last update: 12/08/2025 21:17:35                                                                  ║
 ## ║   User update: Gustavo Filgueiras <gfilgueirasrj@gmail.com>                                         ║
 ## ║   Project:     Base Project Laravel (RVA)                                                           ║
 ## ║   License:     GNU                                                                                  ║
@@ -33,7 +33,7 @@ bannerLicense=$(grep -i '^\s*c_PROJECT_LICENSE\s*=' "$env_file" | head -1 | sed 
 bannerCompany=$(grep -i '^\s*SOFTWARE_FABRIC_NAME\s*=' "$env_file" | head -1 | sed -E 's/^\s*SOFTWARE_FABRIC_NAME\s*=\s*"?([^"#]*)"?\s*(#.*)?$/\1/' | xargs)
 
 # Collect the files
-FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -Ei '\.(php|css|js|sh|json)$')
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -Ei '\.(php|css|js|sh)$')
 
 
 ## **********************************
